@@ -41,7 +41,7 @@ fragment half4 warpFragment(VertexInOut inFrag [[ stage_in ]],
                             texture2d<half, access::sample> cpuWarped [[ texture(1) ]])
 {
   constexpr sampler s(coord::pixel, filter::linear, address::clamp_to_zero);
-  half4 gpuWarpedPixel = half4(original.sample(s, inFrag.warpedTexCoords.xy / inFrag.warpedTexCoords.z).r, 0, 0, 255);
+  half4 gpuWarpedPixel = half4(original.sample(s, inFrag.warpedTexCoords.xy * (1.0 / inFrag.warpedTexCoords.z)).r, 0, 0, 255);
   half4 cpuWarpedPixel = half4(0, cpuWarped.sample(s, inFrag.originalTexCoords.xy).r, 0, 255);
   
   return (gpuWarpedPixel + cpuWarpedPixel) * 0.5;
