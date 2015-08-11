@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MetalView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<MetalViewDelegate>
 
+@property (strong, nonatomic) MetalView *view;
 
 @end
 

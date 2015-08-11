@@ -1,0 +1,16 @@
+//
+//  OpenCV.pch
+//  warpExample
+//
+//  Created by Alessandro Dal Grande on 8/11/15.
+//  Copyright (c) 2015 Nifty. All rights reserved.
+//
+
+#ifndef warpExample_OpenCV_pch
+#define warpExample_OpenCV_pch
+
+#ifdef __cplusplus
+#include <opencv2/opencv.hpp>
+#endif
+
+#endif
